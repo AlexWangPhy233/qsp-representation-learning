@@ -1,0 +1,35 @@
+{
+  "source": "Production runs with the settings in protocol.json",
+  "initialization_generated": true,
+  "dynamics_cells_generated": [
+    [
+      1024,
+      4
+    ],
+    [
+      128,
+      64
+    ]
+  ],
+  "scan_stages_generated": [
+    "static",
+    "dtcheck",
+    "dynamic",
+    "robustness"
+  ],
+  "scan_rows": {
+    "static": 71,
+    "dtcheck": 4,
+    "dynamic": 46,
+    "robustness": 6
+  },
+  "scan_rows_skipped": {
+    "static": 2
+  },
+  "figure_data": "All arrays read by plot_figures.py",
+  "reproducibility": {
+    "sparse_cell": "Regenerating all 30 runs reproduces the QSP hitting times to relative 1e-12 or better",
+    "dense_cell": "First 20 steps reproduced exactly and frozen-kernel hitting times to relative 1e-10; the full 500000-step run takes several hours",
+    "occupancy_scan_and_initialization": "Regenerated points and samples agree with the supplied values to within 1e-11"
+  }
+}

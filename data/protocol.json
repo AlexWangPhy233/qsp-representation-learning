@@ -1,0 +1,227 @@
+{
+  "GENERATE_INITIALIZATION": true,
+  "GENERATE_DYNAMICS": true,
+  "SCAN_STAGES": [
+    "static",
+    "dtcheck",
+    "dynamic",
+    "robustness"
+  ],
+  "INPUT_X": 0.6,
+  "BETA_DEGREES": [
+    16,
+    64,
+    256
+  ],
+  "BETA_SAMPLES": 4000,
+  "BETA_SEED": 20260812,
+  "CV_INPUTS": [
+    0.6,
+    0.75,
+    0.9
+  ],
+  "CV_MIN_DEGREE": 4,
+  "CV_MAX_DEGREE": 4096,
+  "CV_POINTS": 150,
+  "CORRELATION_DEGREES": [
+    16,
+    64,
+    256,
+    1024
+  ],
+  "CORRELATION_U_MAX": 4.5,
+  "CORRELATION_U_POINTS": 450,
+  "CORRELATION_DELTA_MAX": 0.8,
+  "CORRELATION_DELTA_POINTS": 300,
+  "DYNAMICS_CELLS": [
+    [
+      1024,
+      4
+    ],
+    [
+      128,
+      64
+    ]
+  ],
+  "DYNAMICS_SEEDS": 30,
+  "DYNAMICS_BASE_SEED": 20260718,
+  "TEACHER_DEGREE": 8,
+  "DYNAMICS_STEP_FACTOR": 0.1,
+  "DYNAMICS_MAX_STEPS": 500000,
+  "LOSS_THRESHOLD": 0.0001,
+  "DYNAMICS_CHECKPOINTS": 256,
+  "NODE_COUNTS": [
+    2,
+    3,
+    4,
+    6,
+    8,
+    11,
+    16,
+    23,
+    32,
+    45,
+    64,
+    91,
+    128,
+    181,
+    256,
+    362,
+    512,
+    724,
+    1024
+  ],
+  "SCAN": {
+    "base_seed": 20261008,
+    "max_elems": 2000000,
+    "max_kernel_elems": 40000000,
+    "dynamic": {
+      "sqrt_d": [
+        16,
+        32,
+        64,
+        128
+      ],
+      "n_sequence": [
+        2,
+        3,
+        4,
+        6,
+        8,
+        11,
+        16,
+        23,
+        32,
+        45,
+        64,
+        91,
+        128,
+        181,
+        256,
+        362,
+        512
+      ],
+      "w_min": 0.0625,
+      "w_max": 4.0,
+      "d_min": 256,
+      "seeds": 32,
+      "seeds_crossover": 64,
+      "crossover_w": [
+        0.25,
+        2.0
+      ],
+      "T_list": [
+        1,
+        2,
+        3
+      ],
+      "dt": 0.05,
+      "targets": "teacher",
+      "per_depth": {
+        "16384": {
+          "w_max": 1.0,
+          "seeds_crossover": 32
+        }
+      }
+    },
+    "static": {
+      "sqrt_d": [
+        16,
+        32,
+        64,
+        128,
+        256
+      ],
+      "n_sequence": [
+        2,
+        3,
+        4,
+        6,
+        8,
+        11,
+        16,
+        23,
+        32,
+        45,
+        64,
+        91,
+        128,
+        181,
+        256,
+        362,
+        512,
+        724,
+        1024
+      ],
+      "w_min": 0.0625,
+      "w_max": 8.0,
+      "seeds": 32
+    },
+    "dt_check": {
+      "points": [
+        [
+          32,
+          16
+        ],
+        [
+          64,
+          64
+        ]
+      ],
+      "seeds": 8,
+      "dt_main": 0.05,
+      "dt_fine": 0.025,
+      "T_list": [
+        1,
+        2,
+        3
+      ]
+    },
+    "robustness": {
+      "sqrt_d": [
+        32,
+        64
+      ],
+      "w": [
+        0.25,
+        1.0,
+        2.0
+      ],
+      "seeds": 32,
+      "T_list": [
+        1,
+        2,
+        3
+      ],
+      "dt": 0.05,
+      "targets": "zero"
+    },
+    "analysis": {
+      "T_main": 2,
+      "fit_w_min": 0.125,
+      "lin_w_min": 0.125,
+      "fit_w_max": 1.0,
+      "fit_d_min": 1024,
+      "fit_d_min_alt": 256,
+      "collapse_w_max": 2.0,
+      "b_window": [
+        -0.15,
+        0.25
+      ],
+      "lin_tol": 0.35,
+      "R_mem": 0.95,
+      "R_share": 0.5
+    }
+  },
+  "BOOTSTRAP_REPEATS": 400,
+  "BOOTSTRAP_SEED": 0,
+  "EXPLORATORY_MIN_N": 16,
+  "ISO_W_VALUES": [
+    0.25,
+    0.5,
+    1.0
+  ],
+  "numpy_version": "2.4.2",
+  "scipy_version": "1.18.0",
+  "python_version": "3.13.12"
+}
